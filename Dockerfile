@@ -8,7 +8,8 @@ RUN set -ex\
     && apt install -y nginx\
     && apt autoremove -y
 
-COPY conf/ /conf
+COPY nginx_ss.conf /conf/nginx_ss.conf
+COPY shadowsocks-libev_config.json /conf/shadowsocks-libev_config.json
 COPY entrypoint.sh /entrypoint.sh
 COPY v2 /v2
 
